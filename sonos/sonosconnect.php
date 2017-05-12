@@ -1,4 +1,5 @@
 <?php
+	// this must be run every time Sonos API calls need to be made
 	require_once __DIR__ . "/../vendor/autoload.php";
 	use duncan3dc\Sonos\Network;
 	$cache = new \Doctrine\Common\Cache\FilesystemCache("/tmp/sonos-cache");

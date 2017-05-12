@@ -1,4 +1,5 @@
 <?php
+// displays votes in dashboard
 	include '../resources/db.php';
 	
 	// gets likes & dislikes

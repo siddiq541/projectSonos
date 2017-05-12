@@ -29,7 +29,8 @@
 	foreach ($tracks as $track){
 		$interval = $currentDate->diff($track[1]);
 		if ($interval->days > $days){
-		  $stmt = $conn->prepare("DELETE FROM trackHistory WHERE URI = '" . $track[0] . "'");
+		  $stmt = $conn->prepare("DELETE FROM trackHistory WHERE URI = ?");
+		  $stmt->bind_param('s', $track[0]);
 		  $stmt->execute();
 		  $stmt->reset();
 		}

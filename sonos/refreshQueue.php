@@ -8,6 +8,7 @@
 		
 	include 'syncQueues.php';
 	
+	// true = refresh
 	if($oldCount != $queue->count()){
 		echo true;
 	}

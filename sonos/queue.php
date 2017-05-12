@@ -30,8 +30,9 @@
 			echo "<thead><tr><th width='100'>Added by</th><th width='170'>Song Name</th><th width='180'>Artist</th><th width='170'>Album</th></tr></thead>";
 			for ($i = 0; $i < $count; $i++) {
 				// sql auto increment starts from 1, not 0
-				$stmt = $conn->prepare("SELECT u_nickname FROM users WHERE u_ID = (SELECT user FROM queue WHERE position = " . 
-					($i+1) . ")");
+				$j = $i + 1;
+				$stmt = $conn->prepare("SELECT u_nickname FROM users WHERE u_ID = (SELECT user FROM queue WHERE position = ?)");
+				$stmt->bind_param('i', $j);
 				$stmt->execute();
 				$stmt->bind_result($username);
 				$stmt->fetch();

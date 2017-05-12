@@ -12,14 +12,17 @@
 	$speakers = $controller->getSpeakers();
 	$totalVolume = 0;
 	$i = 0;
+	
 	foreach($speakers as $speaker){
 		$totalVolume += $speaker->getVolume();
 		$i++;
 	}
+	
 	$volume = $totalVolume / $i;
 	
 	// gets mute button text
 	$mutetext = 'Unmute';
+	
 	foreach($speakers as $speaker){
 		if($speaker->isMuted() == FALSE){
 			$mutetext = 'Mute';

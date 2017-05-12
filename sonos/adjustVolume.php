@@ -9,6 +9,7 @@
 		$speakers = $controller->getSpeakers();
 		$totalVolume = 0;
 		$i = 0;
+		
 		foreach($speakers as $speaker){
 			$totalVolume += $speaker->getVolume();
 			$i++;
