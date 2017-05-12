@@ -1,89 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>UNNC Event Website</title>
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <script type="text/javascript">
-        function f1(clickid){
-            if(clickid=="one"){
-                document.getElementById("one").style.display='none';
-                document.getElementById("two").style.display='block';
-                document.getElementById("three").style.display='none';
-            }
-            else if(clickid=="two"){
-                document.getElementById("one").style.display='block';
-                document.getElementById("two").style.display='none';
-                document.getElementById("three").style.display='none';
-            }
-            else  if(clickid=="three"){
-                document.getElementById("one").style.display='none';
-                document.getElementById("two").style.display='none';
-                document.getElementById("three").style.display='block';
-            }
-        }
-    </script>
-</head>
-<body class="index">
-<div class="index-main">
-    <div class="index-main-body">
-        <div class="index-header">
-            <h1 class="logo hide-text"> Ideagen Event Website </h1>
-            <h2 class="subtile"> View Event Here</h2>
-        </div>
-        <div class="desk-front">
-            <div class="index-tab-navs">
-                <div class="navs-slider">
-                    <a href="#signup" class="active" onclick="f1('one')"> Register</a>
-                    <a href="#sighin" onclick="f1('two')"> Sign In</a>
-                    <a href="#showevent" onclick="f1('three')"> Show More Information</a>
-                    <span class="navs-slider-bar"></span>
-                </div>
-            </div>
-            <div class="view-signin" id="one" style="display: none;">
-                <form action="check.php" method="post">
-                    <input type="hidden" name="signin" value="123"/>
-                    <div class="group-inputs">
-                        <div class="email input-wrapper">
-                            <input type="text" name="username" aria-label="username" placeholder="Username" required >
-                        </div>
-                        <div class="password input-wrapper">
-                            <input class="password" type="password" name="Password" aria-label="password" placeholder="Password" >
-                        </div>
-                    </div>
-                    <div class="Sign-in-button">
-                        <button class="sign-button submit" type="submit">Sign in!</button>
-                    </div>
-                </form>
-            </div>
-            <div class="view-signup" id="two" style="display: block;">
-                <form action="register_1.php" method="post">
-                    <input type="hidden" name="signup" value="123"/>
-                    <div class="group-inputs">
-                        <div class="name input-wrapper">
-                            <input required type="text" name="Name" aria-label="fullname" placeholder="Username" >
-                        </div>
-                        <div class="password input-wrapper">
-                            <input required type="password" name="Password" aria-label="password" placeholder="Password" >
-                        </div>
-                    </div>
-                    <div class="Sign-up-button">
-                        <button class="sign-button submit" type="submit">Create a new account!</button>
-                    </div>
-                </form>
-            </div>
-            <div class="view-sign" id="three" style="display: none;">
-                <table width="499" height="49" border="1" cellpadding="0" cellspacing="0">
-                    <tr>
-                        <td width="95">Event Name</td>
-                        <td width="95">Event Location</td>
-                        <td width="95">Event Time</td>
-                    </tr>
-
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>UNNC Event Website</title>
+		<link rel="stylesheet" type="text/css" href="index.css">
+		<script type="text/javascript">
+			function f1(clickid){
+				if(clickid=="one"){
+					document.getElementById("one").style.display='none';
+					document.getElementById("two").style.display='block';
+					document.getElementById("three").style.display='none';
+				}
+				else if(clickid=="two"){
+					document.getElementById("one").style.display='block';
+					document.getElementById("two").style.display='none';
+					document.getElementById("three").style.display='none';
+				}
+				else  if(clickid=="three"){
+					document.getElementById("one").style.display='none';
+					document.getElementById("two").style.display='none';
+					document.getElementById("three").style.display='block';
+				}
+			}
+		</script>
+	</head>
+	
+	<body class="index">
+		<div class="index-main">
+			<div class="index-main-body">
+				<div class="index-header">
+					<h1 class="logo hide-text"> Ideagen Event Website </h1>
+					<h2 class="subtile"> View Event Here</h2>
+				</div>
+				<div class="desk-front">
+					<div class="index-tab-navs">
+						<div class="navs-slider">
+							<a href="#signup" class="active" onclick="f1('one')"> Register</a>
+							<a href="#sighin" onclick="f1('two')"> Sign In</a>
+							<a href="#showevent" onclick="f1('three')"> Show More Information</a>
+							<span class="navs-slider-bar"></span>
+						</div>
+					</div>
+					<div class="view-signin" id="one" style="display: none;">
+						<form action="check.php" method="post">
+							<input type="hidden" name="signin" value="123"/>
+							<div class="group-inputs">
+								<div class="email input-wrapper">
+									<input type="text" name="username" aria-label="username" placeholder="Username" required >
+								</div>
+								<div class="password input-wrapper">
+									<input class="password" type="password" name="Password" aria-label="password" placeholder="Password" >
+								</div>
+							</div>
+							<div class="Sign-in-button">
+								<button class="sign-button submit" type="submit">Sign in!</button>
+							</div>
+						</form>
+					</div>
+					<div class="view-signup" id="two" style="display: block;">
+						<form action="register_1.php" method="post">
+							<input type="hidden" name="signup" value="123"/>
+							<div class="group-inputs">
+								<div class="name input-wrapper">
+									<input required type="text" name="Name" aria-label="fullname" placeholder="Username" >
+								</div>
+								<div class="password input-wrapper">
+									<input required type="password" name="Password" aria-label="password" placeholder="Password" >
+								</div>
+							</div>
+							<div class="Sign-up-button">
+								<button class="sign-button submit" type="submit">Create a new account!</button>
+							</div>
+						</form>
+					</div>
+					<div class="view-sign" id="three" style="display: none;">
+						<table width="499" height="49" border="1" cellpadding="0" cellspacing="0">
+							<tr>
+								<td width="95">Event Name</td>
+								<td width="95">Event Location</td>
+								<td width="95">Event Time</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
