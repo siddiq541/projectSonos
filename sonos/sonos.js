@@ -132,6 +132,7 @@ function setImage(albumArt){
 	document.getElementById('albumArt').src =  albumArt;
 }
 
+// handles liking a track
 function like(){
 	var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
@@ -143,6 +144,7 @@ function like(){
     xmlhttp.send();
 }
 
+// handles disliking a track
 function dislike(){
 	var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
@@ -187,6 +189,7 @@ function hasVoted() {
     xmlhttp.send();
 }
 
+// handles displaying correct volume/mute info for current selected speaker, call this when changing selection
 function changeSpeaker(){
 	var speaker = document.getElementById("changeSpeaker").value;
 	localStorage.setItem('speaker', speaker);
@@ -202,10 +205,12 @@ function changeSpeaker(){
     xmlhttp.send();
 }
 
+// saves currently selected speaker in local storage so saves on refresh
 function setSpeaker(){
 	document.getElementById("changeSpeaker").value = localStorage.getItem("speaker");
 }
 
+// records volume changes to activity log
 function recordVolumeChange() {
 	var speaker = document.getElementById("changeSpeaker").value;
     var xmlhttp = new XMLHttpRequest();

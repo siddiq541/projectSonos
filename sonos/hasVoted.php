@@ -3,7 +3,8 @@
 	include '../resources/db.php';
 	
 	// check if user has voted
-	$stmt = $conn->prepare("SELECT hasVoted FROM users WHERE u_ID = '" . $_SESSION['id'] . "'");
+	$stmt = $conn->prepare("SELECT hasVoted FROM users WHERE u_ID = ?");
+	$stmt->bind_param('s', $_SESSION['id']);
 	$stmt->execute();
 	$stmt->bind_result($hasVoted);
 	$stmt->fetch();

@@ -1,11 +1,13 @@
 <?php
-	// functions written for the purpose of this application
+	// functions written for specific purposes in this application
 	
+	// converts the format of 'position' displayed on the dashboard to seconds
 	function positionToSeconds($position){
 		$array = explode(":", $position);
 		return ($array[1] *60) + $array[2];
 	}
 	
+	// records an activity to activity.txt
 	function recordActivity($activity){
 		$file = "../resources/activity.txt";
 		$fp = fopen($file, "a+");

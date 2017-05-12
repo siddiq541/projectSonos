@@ -20,7 +20,8 @@
 	}
 	
 	// select a random track
-	$stmt = $conn->prepare("SELECT track FROM recommendedTracks WHERE ID = " . $rand . "");
+	$stmt = $conn->prepare("SELECT track FROM recommendedTracks WHERE ID = ?");
+	$stmt->bind_param('i', $rand);
 	$stmt->execute();
 	$stmt->bind_result($track);
 	$stmt->fetch();
@@ -40,16 +41,19 @@
 		
 		if ($count > 5){
 			// delete track that was added
-			$stmt = $conn->prepare("DELETE FROM recommendedTracks WHERE ID = " . $rand . "");
+			$stmt = $conn->prepare("DELETE FROM recommendedTracks WHERE ID = ?");
+			$stmt->bind_param('i', $rand);
 			$stmt->execute();
 			$stmt->reset();
 		
 			// update auto increment
-			$stmt = $conn->prepare("UPDATE recommendedTracks SET ID = ID-1 WHERE ID > " . $rand . "");
+			$stmt = $conn->prepare("UPDATE recommendedTracks SET ID = ID-1 WHERE ID > ?");
+			$stmt->bind_param('i', $rand);
 			$stmt->execute();
 			$stmt->reset();
 		}
 		else{
+			// if not enough songs in recommended, update the trackhistory and generate more from this
 			include 'updateTrackHistory.php';
 			include 'generateRecommendations.php';
 		}

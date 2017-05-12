@@ -6,6 +6,7 @@
 		$speakers = $controller->getSpeakers();
 		// check the current state of the speakers
 		$isMuted = TRUE;
+		
 		foreach($speakers as $speaker){
 			if($speaker->isMuted() == FALSE){
 				$isMuted = FALSE;

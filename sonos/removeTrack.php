@@ -11,7 +11,7 @@
 	$stmt = $conn->prepare("UPDATE queue SET position = position-1 WHERE position > 1");
 	$stmt->execute();
 	$stmt->reset();
-		
+	
 	// find end of queue
 	$stmt = $conn->prepare("SELECT MAX(position) FROM queue");
 	$stmt->execute();
