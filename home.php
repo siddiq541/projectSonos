@@ -20,67 +20,54 @@
     <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
 </head>
 <body >
-
 <div id="wapper" style="position: relative;height: auto; min-height: 100% ">
-<div class="navbar navbar-default navbar-static-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Sonos Music System (a working title)</a>
-        </div>
-        <div class="collapse navbar-collapse" id="navbar-ex-collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="active">
-                    <!--<a href="#">Home</a>-->
-                </li>
-                <li>
-                    <!--<a href="#">Contacts</a>-->
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-
+	<div class="navbar navbar-default navbar-static-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Sonos Music System (a working title)</a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-ex-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active">
+						<!--<a href="#">Home</a>-->
+					</li>
+					<li>
+						<!--<a href="#">Contacts</a>-->
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
     <div class="section" style="padding-bottom:30px;width:100%; height: 90%;min-height: 750px;">
-    <div class="container">
-
-
-    <!Main Section.>
-
-    <!Query user display name from database.>
-    <?php
-     //Query table for user's display name.
-        $stmt = $conn->prepare('SELECT u_nickname , is_admin FROM users WHERE u_ID = ?;');
-        $stmt->bind_param('s',$id);
-        $stmt->execute();
-        $stmt->bind_result($dName,$isAdmin);
-        while ($stmt->fetch())//Fetch has to be handled in a while.
-    ?>
-        <!Navigation Bar>
-
-
-
-
-
-
+		<div class="container">
+		<!Main Section.>
+		<!Query user display name from database.>
+		<?php
+			// query table for user's display name.
+			$stmt = $conn->prepare('SELECT u_nickname , is_admin FROM users WHERE u_ID = ?;');
+			$stmt->bind_param('s',$id);
+			$stmt->execute();
+			$stmt->bind_result($dName,$isAdmin);
+			// fetch has to be handled in a while.
+			while ($stmt->fetch())
+		?>
+		<!Navigation Bar>
         <div class="row hidden-lg hidden-md" style="height:40%">
-                <div class="panel panel-primary" >
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Too Small</h3>
-                    </div>
-                    <div class="panel-body">
-                        The browser size is too small to display full functionality. Please expand the browser size
-                       </div>
-                </div>
+			<div class="panel panel-primary" >
+				<div class="panel-heading">
+					<h3 class="panel-title">Too Small</h3>
+				</div>
+				<div class="panel-body">
+					The browser size is too small to display full functionality. Please expand the browser size
+				</div>
+			</div>
         </div>
-
-
         <div class="row hidden-sm hidden-xs" style="height:40%">
             <div class="col-md-8"  style=" height:100%">
                 <div  style=" height:100%">
@@ -108,8 +95,7 @@
                                 <!Display 'Manage Accounts' if user is an admin.>
                                 <!Will require additional is admin check on 'Manage Accounts' page.>
                                 <?php
-                                if(htmlspecialchars($isAdmin) == 1)
-                                {
+                                if(htmlspecialchars($isAdmin) == 1){
                                     echo '<a style="display: inline;"><a class="btn btn-primary" href ="#" onclick="load(';
                                     echo "'manage.php'";
                                     echo ')">Manage Accounts</a></li>';
@@ -140,41 +126,34 @@
             <p>
 
         </div>
-
-
-
-
-
         <script>
-        function load(pageUrl) {
+        function load(pageUrl){
             document.getElementById("Main").innerHTML='<object width="100%" style="height:100%" type="text/html" data='+ pageUrl +' ></object>';
         }
-        load('sonos/queue.php');//Default.
-    </script>
+		// default.
+        load('sonos/queue.php');
+		</script>
 
 </div>
 </div>
+	<footer style="height:30px;width:100%;position:fixed;bottom:5px;left:0px;">
+		<div class="section section-primary" style="padding-bottom: 0px; padding-top: 10px;">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-2">
+						<p>Group 35</p>
+					</div>
+					<div class="col-md-2">
 
+					</div>
+					<div class="col-md-5">
 
-<footer style="height:30px;width:100%;position:fixed;bottom:5px;left:0px;">
-    <div class="section section-primary" style="padding-bottom: 0px; padding-top: 10px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2">
-                    <p>Group 35</p>
-                </div>
-                <div class="col-md-2">
-
-                </div>
-                <div class="col-md-5">
-
-                </div>
-                <div class="col-md-1"><a href="#"><img src="resources/ideagen-logo.svg" class="img-responsive"></a></div><div class="col-md-1"><a href="#"><img src="resources/sonos-logo.jpg" class="img-responsive"></a></div><div class="col-md-1"><a href="#"><img src="resources/spotify-logo.jpg" class="img-responsive"></a></div>
-            </div>
-        </div>
-    </div>
-
-    </footer>
+					</div>
+					<div class="col-md-1"><a href="#"><img src="resources/ideagen-logo.svg" class="img-responsive"></a></div><div class="col-md-1"><a href="#"><img src="resources/sonos-logo.jpg" class="img-responsive"></a></div><div class="col-md-1"><a href="#"><img src="resources/spotify-logo.jpg" class="img-responsive"></a></div>
+				</div>
+			</div>
+		</div>
+	</footer>
 </div>
 </body>
 </html>
