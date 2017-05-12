@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<script language="JavaScript">
+		function welcome(){
+			document.getElementById("user").innerHTML = document.getElementById("Username").value;
+		}
+		</script>
+		<title>Register User</title>
+	</head>
+	
+	<body>
+		<h1>Register User</h1>
+		<p>
+			<form method"get">
+				Username:<br>
+				<input type="text" id="Username">
+				<br>Password<br>
+				<input type="text" id="Password"><br>
+			</form>
+			
+			<input type="submit" onclick="welcome();" value="Submit">
+			
+			<p>Welcome <span id='user'></span></p>
+			
+		</p>
+	</body>
+</html>
+
+
+
+

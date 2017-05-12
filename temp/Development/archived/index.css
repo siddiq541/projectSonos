@@ -1,0 +1,65 @@
+.index{
+    background-image:url(frontpage.jpg);
+    background-repeat: repeat;
+    background-position:center;
+}
+.index-header{
+    text-align: center;
+}
+.desk-front{
+    text-align: center;
+}
+.sign-button {
+    background: rgba(173, 157, 121, 0.63);
+    box-shadow: none;
+    border: 0;
+    border-radius: 0px;
+    line-height: 30px;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.group-inputs {
+    padding: 1px 0;
+    border-radius: 3px;
+}
+.input-wrapper {
+    position: relative;
+    margin: 0;
+}
+.index-tab-navs {
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+.index-main-body {
+    margin: auto;
+    padding: 40px 0;
+    width:500px;
+}
+.index-tab-navs a {
+    width: 4em;
+    line-height: 36px;
+    opacity: .7;
+    -ms-filter: "alpha(Opacity=70)";
+    -webkit-transition: opacity .15s,color .15s;
+    transition: opacity .15s,color .15s;
+}
+.view-signup  {
+    float: none;
+    margin: auto;
+    width: 100%;
+}
+.navs-slider {
+    position: relative;
+    display: inline-block;
+}
+.input-wrapper input {
+    padding: 1em .8em;
+    width: 60%;
+    box-sizing: border-box;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
