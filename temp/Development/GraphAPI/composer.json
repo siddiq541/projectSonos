@@ -1,0 +1,6 @@
+{
+    "require": {
+        "duncan3dc/sonos": "^1.9",
+		"jwilsson/spotify-web-api-php": "^1.6.1"
+    }
+}
