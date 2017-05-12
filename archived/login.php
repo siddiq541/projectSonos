@@ -16,20 +16,18 @@
 			<h1 class="logo hide-text"> Ideagen Sonos Music Service </h1>
 		</div>
 		<div class="desk-front">
-		<div class="view-signin">
-			<form method"get" onsubmit='return validateLogin();'>
-
-			<div class="group-inputs">
-				<div class="email input-wrapper">
-					<input type="text" id="email" name="email" aria-label="username" placeholder="Email" required >
-				</div>
-
-			<div class="Sign-in-button">
-				<button class="sign-button submit" type="submit" name='submit'>Sign In</button>
+			<div class="view-signin">
+				<form method"get" onsubmit='return validateLogin();'>
+					<div class="group-inputs">
+						<div class="email input-wrapper">
+							<input type="text" id="email" name="email" aria-label="username" placeholder="Email" required >
+						</div>
+						<div class="Sign-in-button">
+							<button class="sign-button submit" type="submit" name='submit'>Sign In</button>
+						</div>
+					</div>
+				</form>
 			</div>
-			</form>
-		</div>
-		</div>
 		</div>
 		<?php
 			include 'db.php';
